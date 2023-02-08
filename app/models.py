@@ -16,8 +16,13 @@ from django.contrib.auth.models import User
 #lets use the protected concept in orm 
 #if there is any reference then the entity is not 
 #deleted
+#we may use the concept of the limit here
 class Page(models.Model):
     user=models.OneToOneField(User,on_delete=models.PROTECT,primary_key=True)
     page_name=models.CharField(max_length=30)
     page_catalog=models.CharField(max_length=50)
     publication_date=models.DateField()
+
+#now if we want to give permission to staff user only
+#to perform the particular operation
+
